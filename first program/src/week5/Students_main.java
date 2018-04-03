@@ -34,5 +34,7 @@ public class Students_main {
 		System.out.println(student1.getName() + " has a gpa of " + student1.getGpa() + " and is in grade " + student1.getGrade());
 		System.out.println(student2.getName() + " has a gpa of " + student2.getGpa() + " and is in grade " + student2.getGrade());
 		System.out.println(student3.getName() + " has a gpa of " + student3.getGpa() + " and is in grade " + student3.getGrade());
+		System.out.println("The Average gpa is " + ((student3.getGpa() + student2.getGpa() + student1.getGpa())/3));
+		
 	}
 }
