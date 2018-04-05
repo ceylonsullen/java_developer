@@ -22,32 +22,26 @@ public class Q5 {
 		File gpas = new File(locationGpas);
 		FileWriter writer;
 		try {
-			writer = new FileWriter(students);
+			writer = new FileWriter(students, false);
 			writer.write("name,grade,gpa\n");
+			Scanner ScN = new Scanner(names);
+			Scanner ScP = new Scanner(gpas);
+
+			Scanner ScG = new Scanner(grades);
 			for (int i = 0; i < 10; i++) {
-				Scanner ScN = new Scanner(names);
-				for  (int j = 0;j < i; j++) {
-					ScN.nextLine();
-				}
+				
+		
 				writer.write(ScN.nextLine() + ",");
-				ScN.close();
-				Scanner ScG = new Scanner(grades);
-				for  (int j = 0;j < i; j++) {
-					ScG.nextLine();
-				}
+			
 				writer.write(ScG.nextLine() + ",");
-				ScG.close();
-				Scanner ScP = new Scanner(gpas);
-				for  (int j = 0;j < i; j++) {
-					ScP.nextLine();
-				}
-				writer.write(ScP.nextLine() + ",\n");
-				ScP.close();
+			
+				writer.write(ScP.nextLine() + "\n");
 				
 			}
 			writer.close();
 		} 
 		catch (IOException e) {
+			e.printStackTrace();
 			System.out.println("cannot access file or location");
 		}
 
@@ -60,6 +54,7 @@ public class Q5 {
 				Student student = new Student(line[0], Integer.parseInt(line[1]), Double.parseDouble(line[2]));
 				studentList.add(student);
 			}
+			scS.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
